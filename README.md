@@ -3,7 +3,7 @@ using the output.db file at https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26c
 
 Download and keep it in the same location flaskserver1.py file is.
 
-unzip Glowsearch2v.zip
+unzip Glowsearch3v.zip
 to get all the files 
 
 ```bash
