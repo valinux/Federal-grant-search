@@ -1,4 +1,4 @@
-# New Easy to use Update Download Glowsearch2v.zip
+# New Easy to use Update Download Glowsearch3v.zip
 using the output.db file at https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26ccj4bHGDskSHmf/view?usp=sharing
 
 Download and keep it in the same location flaskserver1.py file is.
