@@ -1,4 +1,15 @@
+# New Easy to use Update Download Glowsearch2v.zip
 
+unzip Glowsearch2v.zip
+
+```bash
+python flaskserver1.py
+```
+
+go to http://127.0.0.1:8080/
+
+search for names or corporation accross the entire .db 
+make sure there is no spacing at the end of their names for example "Mike Johnson" Not " Mike Johnson "
 
 # Federal-grant-search
 
