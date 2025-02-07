@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Filings</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        .search-container { margin-bottom: 20px; }
+        input[type="text"] { padding: 8px; width: 300px; }
+        button { padding: 8px 12px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Search Filings</h2>
+    <form method="POST" class="search-container">
+        <input type="text" name="query" placeholder="Enter EIN or Corporation Name" value="{{ query }}">
+        <button type="submit">Search</button>
+    </form>
+    {% if results %}
+        <table>
+            <thead>
+                <tr>
+                    <th>EIN</th>
+                    <th>Corporation Name</th>
+                    <th>Receipt Amount</th>
+                    <th>Government Amount</th>
+                    <th>Contribution Amount</th>
+                    <th>Tax Year</th>
+                    <th>Officials</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in results %}
+                <tr>
+                    <td>{{ row.filer_ein }}</td>
+                    <td>{{ row.filer_name }}</td>
+                    <td>${{ "{:,.0f}".format(row.receipt_amt|default(0)) }}</td>
+                    <td>${{ "{:,.0f}".format(row.govt_amt|default(0)) }}</td>
+                    <td>${{ "{:,.0f}".format(row.contrib_amt|default(0)) }}</td>
+                    <td>{{ row.tax_year }}</td>
+                    <td>
+                        {% if row.officials_json %}
+                            {% for official in row.officials_json %}
+                                {{ official.n }} ({{ official.t }})<br>
+                            {% endfor %}
+                        {% else %}
+                            No officials listed
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+</body>
+</html>
+
