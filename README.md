@@ -21,8 +21,8 @@ make sure there is no spacing at the end of their names for example "Mike Johnso
 
 ## Overview
 
-This project sets up a Flask server, processes a database (`output.db`), and serves an HTML file (`index.html`). The server is hosted locally, and users can interact with the database via a web interface.
-using the output.db file at https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26ccj4bHGDskSHmf/view?usp=sharing
+This project sets up a Flask server, processes a database (`outaddresses.db`), and serves an HTML file (`index.html`). The server is hosted locally, and users can interact with the database via a web interface.
+using the outaddresses.db file at https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26ccj4bHGDskSHmf/view?usp=sharing
 
 ## Setup Instructions
 
