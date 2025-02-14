@@ -1,10 +1,12 @@
 # New Easy to use Update Download Glowsearchv5.zip
 using the output.db file at https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26ccj4bHGDskSHmf/view?usp=sharing
+Were now using v2 db with addresses called outaddresses.db at https://drive.google.com/file/d/1d0zYAg4RMbZ9Fb0mXA8e6ITDOkpGA7WD/view?usp=sharing
+Another db will be released tomorrow with individual addresses 
 
-Download and keep it in the same location flaskserver1.py file is.
+Download and keep it in the same location as flaskserver1.py file is to run it.
 
-unzip Glowsearchv5.zip
-to get all the files 
+unzip Glowsearchv666.zip
+to get all the files make sure outaddresses.db is at the same location as flaskserver1.py code is.
 
 ```bash
 python flaskserver1.py
@@ -28,7 +30,7 @@ Follow the steps below to set up and run the Flask server:
 
 ### 1. Download the Database
 
-Download the `output.db` file from [this link](https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26ccj4bHGDskSHmf/view?usp=sharing) and save it to your local machine.
+Download the `outaddresses.db` file from [this link]([https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26ccj4bHGDskSHmf/view?usp=sharing](https://drive.google.com/file/d/1d0zYAg4RMbZ9Fb0mXA8e6ITDOkpGA7WD/view?usp=sharing)) and save it to your local machine.
 
 
 ### 2. Create Templates Directory
@@ -60,7 +62,7 @@ pip install Flask
 Start the Flask server by running:
 
 ```bash
-python flaskserver.py
+python flaskserver1.py
 ```
 
 ### 7. Access the Server
