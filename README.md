@@ -1,4 +1,4 @@
-# New Easy to use Update Download Glowsearchv5.zip
+# New Easy to use Update Download Glowsearchv666.zip
 using the output.db file at https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26ccj4bHGDskSHmf/view?usp=sharing
 <br>Were now using v2 db with addresses called outaddresses.db at https://drive.google.com/file/d/1d0zYAg4RMbZ9Fb0mXA8e6ITDOkpGA7WD/view?usp=sharing</br>
 Another db will be released tomorrow with individual addresses 
