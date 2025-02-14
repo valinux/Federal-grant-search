@@ -4,10 +4,12 @@ using the output.db file at https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26c
 Another db will be released tomorrow with individual addresses 
 
 Download and keep it in the same location as flaskserver1.py file is to run it.
+<br>
 
 unzip Glowsearchv666.zip
+</br>
 to get all the files make sure outaddresses.db is at the same location as flaskserver1.py code is.
-
+<br>
 ```bash
 python flaskserver1.py
 ```
@@ -16,7 +18,29 @@ go to http://127.0.0.1:8080/
 
 search for names or corporation accross the entire .db 
 make sure there is no spacing at the end of their names for example "Mike Johnson" Not " Mike Johnson "
-
+New update v666
+</br>
+<br>
+Search by address
+</br>
+example: 
+<br>
+708 ALBERT AVE Lakewood, NJ 08701-5413
+</br>
+<br>
+or by zip code:
+</br>
+08701
+<br>
+or by State: 
+</br>
+NJ
+<br>
+or by address: 708 ALBERT AVE Lakewood
+</br>
+<br>
+and get a list of connections of who these mobsters are
+</br>
 # Federal-grant-search
 
 ## Overview
