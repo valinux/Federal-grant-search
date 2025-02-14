@@ -30,7 +30,7 @@ Follow the steps below to set up and run the Flask server:
 
 ### 1. Download the Database
 
-Download the `outaddresses.db` file from [this link]([https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26ccj4bHGDskSHmf/view?usp=sharing](https://drive.google.com/file/d/1d0zYAg4RMbZ9Fb0mXA8e6ITDOkpGA7WD/view?usp=sharing)) and save it to your local machine.
+Download the `outaddresses.db` file from [this link](https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26ccj4bHGDskSHmf/view?usp=sharing](https://drive.google.com/file/d/1d0zYAg4RMbZ9Fb0mXA8e6ITDOkpGA7WD/view?usp=sharing) and save it to your local machine.
 
 
 ### 2. Create Templates Directory
