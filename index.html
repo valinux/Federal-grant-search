@@ -1,63 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Filings</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f4f4f4; }
-        .search-container { margin-bottom: 20px; }
-        input[type="text"] { padding: 8px; width: 300px; }
-        button { padding: 8px 12px; cursor: pointer; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Filings</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .search-container { margin-bottom: 20px; }
+    input[type="text"] { padding: 8px; width: 300px; }
+    button { padding: 8px 12px; cursor: pointer; }
+    .filing {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      background: #f9f9f9;
+    }
+    .filing p { margin: 5px 0; }
+    .filing strong { display: inline-block; width: 180px; }
+  </style>
 </head>
 <body>
-    <h2>Search Filings</h2>
-    <form method="POST" class="search-container">
-        <input type="text" name="query" placeholder="Enter EIN or Corporation Name" value="{{ query }}">
-        <button type="submit">Search</button>
-    </form>
-    {% if results %}
-        <table>
-            <thead>
-                <tr>
-                    <th>EIN</th>
-                    <th>Corporation Name</th>
-                    <th>Receipt Amount</th>
-                    <th>Government Amount</th>
-                    <th>Contribution Amount</th>
-                    <th>Tax Year</th>
-                    <th>Officials</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for row in results %}
-                <tr>
-                    <td>{{ row.filer_ein }}</td>
-                    <td>{{ row.filer_name }}</td>
-                    <td>${{ "{:,.0f}".format(row.receipt_amt|default(0)) }}</td>
-                    <td>${{ "{:,.0f}".format(row.govt_amt|default(0)) }}</td>
-                    <td>${{ "{:,.0f}".format(row.contrib_amt|default(0)) }}</td>
-                    <td>{{ row.tax_year }}</td>
-                    <td>
-                        {% if row.officials_json %}
-                            {% for official in row.officials_json %}
-                                {{ official.n }} ({{ official.t }})<br>
-                            {% endfor %}
-                        {% else %}
-                            No officials listed
-                        {% endif %}
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% else %}
-        <p>No results found.</p>
+  <h2>Search Filings</h2>
+  <form method="POST" class="search-container">
+    <input type="text" name="query" placeholder="Enter EIN, Corporation Name, Address, Zip Code or State" value="{{ query }}">
+    <button type="submit">Search</button>
+  </form>
+
+  {% if query %}
+    {% if address_count %}
+      <p>Found {{ address_count }} corporation(s) registered at this address/zip/state for "{{ query }}".</p>
+    {% elif person_count %}
+      <p>Found {{ person_count }} corporation(s) associated with "{{ query }}".</p>
     {% endif %}
+  {% endif %}
+
+  {% if results %}
+    {% for row in results %}
+      <div class="filing">
+        <p><strong>EIN:</strong> {{ row.filer_ein }}</p>
+        <p><strong>Corporation Name:</strong> {{ row.filer_name }}</p>
+        <p><strong>Corporate Address:</strong> {{ row.corp_address }}</p>
+        <p><strong>Receipt Amount:</strong> ${{ "{:,.0f}".format(row.receipt_amt|default(0)) }}</p>
+        <p><strong>Government Amount:</strong> ${{ "{:,.0f}".format(row.govt_amt|default(0)) }}</p>
+        <p><strong>Contribution Amount:</strong> ${{ "{:,.0f}".format(row.contrib_amt|default(0)) }}</p>
+        <p><strong>Tax Year:</strong> {{ row.tax_year }}</p>
+        <p><strong>Officials:</strong><br>
+          {% if row.officials_json %}
+            {% for official in row.officials_json %}
+              {{ official.n }} ({{ official.t }})<br>
+            {% endfor %}
+          {% else %}
+            No officials listed
+          {% endif %}
+        </p>
+        {% if row.graph_url %}
+          <p><strong>Graph:</strong> <a href="{{ row.graph_url }}" target="_blank">View Graph</a></p>
+        {% endif %}
+        {% if row.grants_url %}
+          <p><strong>Full Connection:</strong> <a href="{{ row.grants_url }}" target="_blank">View All Connection</a></p>
+        {% endif %}
+        {% if row.propublica_link %}
+          <p><strong>Full Expenses:</strong> <a href="{{ row.propublica_link }}" target="_blank">View Organization</a></p>
+        {% endif %}
+        {% if row.propublica_link_with_xml %}
+          <p><strong>Full Organization filing:</strong> <a href="{{ row.propublica_link_with_xml }}" target="_blank">View Full Filing</a></p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No results found.</p>
+  {% endif %}
 </body>
 </html>
 
