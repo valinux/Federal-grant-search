@@ -25,7 +25,7 @@ go to http://127.0.0.1:8080/
 
 search for names or corporation accross the entire .db 
 make sure there is no spacing at the end of their names for example "Mike Johnson" Not " Mike Johnson "
-New update v666
+New update v7 you can now search by Phone number 
 </br>
 <br>
 Search by address
