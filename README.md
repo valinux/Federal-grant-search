@@ -2,15 +2,18 @@
 
 https://drive.google.com/file/d/1zigXNqMALuF4adtWnx-Rtnb_FUbsfiXV/view?usp=sharing
 
-# New Easy to use Update Download Glowsearchv666.zip
+# [old] New Easy to use Update Download GlowSearch7v.zip
 using the output.db file at https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26ccj4bHGDskSHmf/view?usp=sharing
-<br>Were now using v2 db with addresses called outaddresses.db at https://drive.google.com/file/d/1d0zYAg4RMbZ9Fb0mXA8e6ITDOkpGA7WD/view?usp=sharing</br>
-Another db will be released tomorrow with individual addresses 
+<br>[old] We are now using v2 db with addresses called outaddresses.db at https://drive.google.com/file/d/1d0zYAg4RMbZ9Fb0mXA8e6ITDOkpGA7WD/view?usp=sharing</br>
+
+<br><b>!!!!![NEW]!!!! We are now using v3 db with addresses called output_two.db at </br></b> [https://drive.google.com/file/d/1_KqRmS3APOmx1x8_CF_N3FkN1x6TZ8Mo/view?usp=sharing](https://drive.google.com/file/d/1_KqRmS3APOmx1x8_CF_N3FkN1x6TZ8Mo/view?usp=sharing)
+
+Another db will be released tomorrow with geo location
 
 Download and keep it in the same location as flaskserver1.py file is to run it.
 <br>
 
-unzip Glowsearchv666.zip
+unzip GlowSearch7v.zip
 </br>
 to get all the files make sure outaddresses.db is at the same location as flaskserver1.py code is.
 <br>
