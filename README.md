@@ -1,8 +1,9 @@
 # New Frequency Data on the same person with multiple Corporation laundering federal grant funds 
 
 https://drive.google.com/file/d/1zigXNqMALuF4adtWnx-Rtnb_FUbsfiXV/view?usp=sharing
-
-# [old] New Easy to use Update Download GlowSearch7v.zip
+# NEW V8 MAP DATA bothout.db JUST DROP: https://drive.google.com/file/d/19yQoW9QbIS92TCRUI01z4IL4mXQMISFn/view?usp=sharing
+# You can now search by zip code on the map for example 08701
+# [old] New Easy to use Update Download GlowSearch8v.zip
 using the output.db file at https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26ccj4bHGDskSHmf/view?usp=sharing
 <br>[old] We are now using v2 db with addresses called outaddresses.db at https://drive.google.com/file/d/1d0zYAg4RMbZ9Fb0mXA8e6ITDOkpGA7WD/view?usp=sharing</br>
 
@@ -13,7 +14,7 @@ Another db will be released tomorrow with geo location
 Download and keep it in the same location as flaskserver1.py file is to run it.
 <br>
 
-unzip GlowSearch7v.zip
+unzip GlowSearch8v.zip
 </br>
 to get all the files make sure outaddresses.db is at the same location as flaskserver1.py code is.
 <br>
