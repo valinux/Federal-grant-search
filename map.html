@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map View - Search Filings</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    nav { margin-bottom: 20px; }
+    .search-container { margin-bottom: 20px; }
+    input[type="text"] { padding: 8px; width: 300px; }
+    button { padding: 8px 12px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">List View</a> | <a href="/map">Map View</a>
+  </nav>
+  <h2>Map View</h2>
+  <form method="POST" class="search-container">
+    <input type="text" name="query" placeholder="Enter Zip Code or Address" value="{{ query }}">
+    <button type="submit">Search</button>
+  </form>
+  <div>
+    {{ map_html|safe }}
+  </div>
+  <h1>Don't forget to show your support <a href="https://x.com/The_Bugman25/status/1890773763412623374">Here</a></h1>
+</body>
+</html>
+

@@ -6,6 +6,7 @@
   <title>Search Filings</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 20px; }
+    nav { margin-bottom: 20px; }
     .search-container { margin-bottom: 20px; }
     input[type="text"] { padding: 8px; width: 300px; }
     button { padding: 8px 12px; cursor: pointer; }
@@ -21,12 +22,14 @@
   </style>
 </head>
 <body>
+  <nav>
+    <a href="/">List View</a> | <a href="/map">Map View</a>
+  </nav>
   <h2>Search Filings</h2>
   <form method="POST" class="search-container">
-    <input type="text" name="query" placeholder="Enter EIN, Corporation Name, Address, Zip Code or State" value="{{ query }}">
+    <input type="text" name="query" placeholder="Enter EIN, Corporation Name, Address, Zip Code, State or Phone Number" value="{{ query }}">
     <button type="submit">Search</button>
   </form>
-
   {% if query %}
     {% if address_count %}
       <p>Found {{ address_count }} corporation(s) registered at this address/zip/state for "{{ query }}".</p>
@@ -34,7 +37,6 @@
       <p>Found {{ person_count }} corporation(s) associated with "{{ query }}".</p>
     {% endif %}
   {% endif %}
-
   {% if results %}
     {% for row in results %}
       <div class="filing">
@@ -54,6 +56,24 @@
             No officials listed
           {% endif %}
         </p>
+        {% if row.ceo_home1 %}
+          <p><strong>Founder:</strong><br>
+             <strong>Name:</strong> {{ row.ceo_home1.name }}<br>
+             <strong>Address:</strong> {{ row.ceo_home1.address }}<br>
+             <strong>Phone:</strong> {{ row.ceo_home1.phone }}
+          </p>
+        {% endif %}
+        {% if row.shell_game %}
+          <p><strong>CPA Laundry:</strong><br>
+             <strong>Corp Name:</strong> {{ row.shell_game.corp_name }}<br>
+             <strong>Corp EIN:</strong> {{ row.shell_game.corp_ein }}<br>
+             <strong>Address:</strong> {{ row.shell_game.address }}<br>
+             <strong>Phone:</strong> {{ row.shell_game.phone }}
+          </p>
+        {% endif %}
+        {% if row.corp_description %}
+          <p><strong>Corporate Description:</strong> {{ row.corp_description }}</p>
+        {% endif %}
         {% if row.graph_url %}
           <p><strong>Graph:</strong> <a href="{{ row.graph_url }}" target="_blank">View Graph</a></p>
         {% endif %}
