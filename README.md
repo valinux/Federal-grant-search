@@ -10,7 +10,7 @@ Another db will be released tomorrow with geo location
 Download and keep it in the same location as flaskserver1.py file is to run it.
 <br>
 
-unzip GlowSearch8v.zip
+unzip GlowSearch9v.zip
 </br>
 to get all the files make sure outaddresses.db is at the same location as flaskserver1.py code is.
 <br>
@@ -49,16 +49,13 @@ and get a list of connections of who these mobsters are
 
 ## Overview
 
-This project sets up a Flask server, processes a database (`outaddresses.db`), and serves an HTML file (`index.html`). The server is hosted locally, and users can interact with the database via a web interface.
-using the outaddresses.db file at https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26ccj4bHGDskSHmf/view?usp=sharing
+This project sets up a Flask server, processes a database (`output_two.db`), and serves an HTML file (`index.html`). The server is hosted locally, and users can interact with the database via a web interface.
 
 ## Setup Instructions
 
 Follow the steps below to set up and run the Flask server:
 
 ### 1. Download the Database
-
-Download the `outaddresses.db` file from [this link](https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26ccj4bHGDskSHmf/view?usp=sharing](https://drive.google.com/file/d/1d0zYAg4RMbZ9Fb0mXA8e6ITDOkpGA7WD/view?usp=sharing) and save it to your local machine.
 
 
 ### 2. Create Templates Directory
@@ -71,10 +68,10 @@ mkdir templates
 
 ### 4. Move `index.html`
 
-Move the `index.html` file into the `templates` directory:
+Move the `index.html and maps.html` file into the `templates` directory:
 
 ```bash
-mv index.html templates/
+mv index.html maps.html templates/
 ```
 
 ### 5. Install Flask
