@@ -1,13 +1,9 @@
 # New Frequency Data on the same person with multiple Corporation laundering federal grant funds 
 
 https://drive.google.com/file/d/1zigXNqMALuF4adtWnx-Rtnb_FUbsfiXV/view?usp=sharing
-# NEW V8 MAP DATA bothout.db JUST DROP: https://drive.google.com/file/d/19yQoW9QbIS92TCRUI01z4IL4mXQMISFn/view?usp=sharing
+# NEW V9 MAP DATA output_two.db JUST DROP: [https://drive.google.com/file/d/19yQoW9QbIS92TCRUI01z4IL4mXQMISFn/view?usp=sharing](https://drive.google.com/file/d/1WoZUuSo1XwC8LHw5dQZUt8-ja7WGkL67/view?usp=sharing)
 # You can now search by zip code on the map for example 08701
-# [old] New Easy to use Update Download GlowSearch8v.zip
-using the output.db file at https://drive.google.com/file/d/1RR6PPACOq5cFp4gn26ccj4bHGDskSHmf/view?usp=sharing
-<br>[old] We are now using v2 db with addresses called outaddresses.db at https://drive.google.com/file/d/1d0zYAg4RMbZ9Fb0mXA8e6ITDOkpGA7WD/view?usp=sharing</br>
 
-<br><b>!!!!![NEW]!!!! We are now using v3 db with addresses called output_two.db at </br></b> [https://drive.google.com/file/d/1_KqRmS3APOmx1x8_CF_N3FkN1x6TZ8Mo/view?usp=sharing](https://drive.google.com/file/d/1_KqRmS3APOmx1x8_CF_N3FkN1x6TZ8Mo/view?usp=sharing)
 
 Another db will be released tomorrow with geo location
 
