@@ -79,7 +79,7 @@ mv index.html maps.html templates/
 install Flask using:
 
 ```bash
-pip install Flask
+pip install -r requirements.txt
 ```
 
 ### 6. Run the Flask Server
@@ -100,7 +100,7 @@ http://127.0.0.1:8080/
 
 ### 8. Search and Find Out Who They Are
 
-Once the server is up and running, you can interact with the database and use the application to search for and find out details about individuals or items stored in the `output.db` database.
+Once the server is up and running, you can interact with the database and use the application to search for and find out details about individuals or items stored in the `output_two.db` database.
 
 ## License
 
