@@ -1,7 +1,7 @@
 # New Frequency Data on the same person with multiple Corporation laundering federal grant funds 
 
 https://drive.google.com/file/d/1zigXNqMALuF4adtWnx-Rtnb_FUbsfiXV/view?usp=sharing
-# NEW V9 for GlowSearch9v.zip MAP DATA output_two.db JUST DROP: [https://drive.google.com/file/d/19yQoW9QbIS92TCRUI01z4IL4mXQMISFn/view?usp=sharing](https://drive.google.com/file/d/1WoZUuSo1XwC8LHw5dQZUt8-ja7WGkL67/view?usp=sharing)
+# NEW V9 for GlowSearch10v.zip MAP DATA output_two.db JUST DROP: [https://drive.google.com/file/d/19yQoW9QbIS92TCRUI01z4IL4mXQMISFn/view?usp=sharing](https://drive.google.com/file/d/1WoZUuSo1XwC8LHw5dQZUt8-ja7WGkL67/view?usp=sharing)
 # You can now search by zip code on the map for example 08701
 
 
@@ -10,7 +10,7 @@ Another db will be released tomorrow with geo location
 Download and keep it in the same location as flaskserver1.py file is to run it.
 <br>
 
-unzip GlowSearch9v.zip
+unzip GlowSearch10v.zip
 </br>
 to get all the files make sure outaddresses.db is at the same location as flaskserver1.py code is.
 <br>
