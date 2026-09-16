@@ -22,6 +22,34 @@ This project is built in support of the **DOGE (Department of Government Efficie
 
 Mobile layout: [docs/screenshots/mobile.png](docs/screenshots/mobile.png)
 
+## Download the dataset
+
+The code is here on GitHub; the database ships separately:
+
+```bash
+git clone https://github.com/valinux/Federal-grant-search.git
+cd Federal-grant-search
+```
+
+Download **[GlowSearch-Database-2026-09.zip](PASTE-GOOGLE-DRIVE-LINK-HERE)** (90 MB) and extract it into the project folder. It contains:
+
+- `output_two.db` — the full 166,385-filing database
+- `output_two.locations.json` — the audited location corrections overlay (without it the app runs, but maps show the original unverified coordinates)
+
+Then:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python build_index.py   # optional but recommended; about two minutes
+python flaskserver1.py
+```
+
+Open **http://127.0.0.1:8080**.
+
+The same files are also on the [dataset release](https://github.com/valinux/Federal-grant-search/releases/tag/dataset-v1), including the optional prebuilt search index.
+
 ## Run locally
 
 Requires Python 3.10+ with SQLite JSON functions. The optional search index requires SQLite 3.34+ with FTS5 and its trigram tokenizer. The application has been tested with Python 3.14 and SQLite 3.50.
