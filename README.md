@@ -31,7 +31,7 @@ git clone https://github.com/valinux/Federal-grant-search.git
 cd Federal-grant-search
 ```
 
-Download **[GlowSearch-Database-2026-09.zip](PASTE-GOOGLE-DRIVE-LINK-HERE)** (90 MB) and extract it into the project folder. It contains:
+Download **[GlowSearch-Database-2026-09.zip](https://drive.google.com/file/d/1GfLJG84hwEdsmM01ovPHuNlCAL_MgTWX/view?usp=sharing)** (90 MB) and extract it into the project folder. It contains:
 
 - `output_two.db` — the full 166,385-filing database
 - `output_two.locations.json` — the audited location corrections overlay (without it the app runs, but maps show the original unverified coordinates)
