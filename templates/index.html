@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fa">
+  <meta name="description" content="Explore nonprofit filings, government funding, and the organizations in your community.">
+  <title>GlowSearch — Follow the funding.</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body data-view="{{ view }}">
+  <a class="skip-link" href="#main">Skip to search</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="GlowSearch home"><span class="brand-mark" aria-hidden="true">g<span></span></span><span>glow<span class="brand-light">search</span><span class="brand-dot">.</span></span></a>
+      <nav class="primary-nav" aria-label="Main navigation"><a href="/" class="active">Explore</a><a href="#about">About the data <span aria-hidden="true">↗</span></a></nav>
+      <div class="database-status" id="database-status"><span class="status-dot"></span><span id="connection-label">Connecting to data</span></div>
+    </div>
+  </header>
+
+  <main id="main" class="workspace">
+    <section class="intro">
+      <div class="eyebrow"><span></span> PUBLIC DATA. CLEARER CONNECTIONS.</div>
+      <h1>Follow the funding<span>.</span></h1>
+      <p>A clearer view of nonprofits, the people behind them,<br class="desktop-break"> and the funding that connects them.</p>
+      <div class="intro-art" aria-hidden="true"><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><span class="orbit orbit-three"></span><span class="art-point point-one"></span><span class="art-point point-two"></span><span class="art-point point-three"></span><span class="art-center">g<span>↗</span></span><span class="art-caption">MAKE THE CONNECTION</span></div>
+    </section>
+
+    <section class="search-section" aria-label="Search filings">
+      <form id="search-form" action="{{ '/map' if view == 'map' else '/' }}" method="get">
+        <div class="search-input-wrap"><svg class="search-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><label class="sr-only" for="query">Search public filings</label><input id="query" name="q" type="search" placeholder="Search an organization, person, EIN, or location…" value="{{ query }}" maxlength="200" autocomplete="off" required><kbd aria-hidden="true">/</kbd></div>
+        <div class="field-wrap"><label class="sr-only" for="field">Search field</label><select id="field" name="field">{% for key, label in fields.items() %}<option value="{{ key }}" {% if field == key %}selected{% endif %}>{{ label }}</option>{% endfor %}</select></div>
+        <button class="button button-primary search-button" type="submit"><span>Search</span><span aria-hidden="true">↗</span></button>
+      </form>
+      <p id="search-hint" class="search-hint" hidden>ZIP searches match the organization’s filing mailing address. Five digits include all ZIP+4 extensions; a full ZIP+4 matches that extension exactly.</p>
+      <div class="suggestions"><span>Try a search</span><button type="button" data-query="education" data-field="corp_description">Education <span>↗</span></button><button type="button" data-query="NJ" data-field="state">New Jersey <span>↗</span></button><button type="button" data-query="foundation" data-field="corporation_name">Foundations <span>↗</span></button></div>
+    </section>
+
+    <section class="explorer" aria-labelledby="results-heading">
+      <div class="results-toolbar"><div><div class="section-kicker">THE EXPLORER</div><h2 id="results-heading">Discover the bigger picture</h2></div><div class="view-switch" role="group" aria-label="Results view"><button id="list-view" type="button" aria-pressed="{{ 'true' if view == 'list' else 'false' }}"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 5h10M7 10h10M7 15h10M3 5h1M3 10h1M3 15h1"/></svg>List</button><button id="map-view" type="button" aria-pressed="{{ 'true' if view == 'map' else 'false' }}"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m2 5 5-3 6 3 5-3v13l-5 3-6-3-5 3zM7 2v13M13 5v13"/></svg>Map</button></div></div>
+      <p id="results-status" class="results-status" role="status" aria-live="polite">Search to explore the organizations in your dataset.</p>
+      <div id="area-filter" class="area-filter" hidden><span>Showing filings in the selected map area</span><button id="clear-area" type="button">Clear area ×</button></div>
+      <div id="notice" class="notice" role="alert" hidden></div>
+
+      <div id="welcome" class="welcome-panel">
+        <div class="welcome-main"><div class="welcome-icon" aria-hidden="true">↗</div><span class="section-kicker">A GOOD QUESTION IS A GREAT START</span><h3>Every filing tells a story.<br>Find where yours begins.</h3><p>Look up an organization, explore a place, or follow a name.<br> Bring public records into focus, one connection at a time.</p><button class="text-button" id="start-search" type="button">Start exploring <span aria-hidden="true">→</span></button></div>
+        <div class="welcome-options"><button type="button" data-query="foundation" data-field="corporation_name"><span class="option-icon" aria-hidden="true">▤</span><span><strong>Explore organizations</strong><small>Find nonprofits and their reported funding</small></span><span aria-hidden="true">↗</span></button><button type="button" data-query="NJ" data-field="state" data-view="map"><span class="option-icon" aria-hidden="true">◎</span><span><strong>See the local picture</strong><small>Explore organizations on the map</small></span><span aria-hidden="true">↗</span></button><button type="button" id="find-person"><span class="option-icon" aria-hidden="true">♧</span><span><strong>Connect the people</strong><small>Search the officers listed in public filings</small></span><span aria-hidden="true">↗</span></button></div>
+      </div>
+
+      <nav id="pagination-top" class="pagination" aria-label="Top result pages" hidden></nav>
+      <div id="results" class="results-grid" aria-busy="false" hidden></div>
+      <nav id="pagination" class="pagination" aria-label="Result pages" hidden></nav>
+      <section id="map-panel" class="map-panel" aria-label="Map results" hidden><div class="map-actions"><span><span class="map-dot"></span> All matching locations · zoom to explore</span><div><button class="button button-secondary" id="reset-map" type="button">Show all matches</button><button class="button button-primary" id="search-area" type="button">List this area</button></div></div><div id="map" aria-label="Interactive organization map"></div><div class="map-caption"><span id="map-count">Search for a place or organization to add locations.</span><span>Clusters include every mapped match</span></div><noscript>Enable JavaScript to use the interactive map.</noscript></section>
+    </section>
+
+    <section class="data-note" id="about"><div class="data-note-icon" aria-hidden="true">i</div><div><h2>Public records. An open starting point.</h2><p>Explore the nonprofit filings in your local dataset. Amounts reflect each filing’s tax year, not current awards. A shared name or address is a connection to investigate, not evidence of wrongdoing. Check the original filing for context.</p></div><span class="data-label">SOURCE MATTERS <span aria-hidden="true">↗</span></span></section>
+  </main>
+
+  <footer class="site-footer"><span>GlowSearch <span class="footer-divider">/</span> Bringing public data into focus.</span><a href="https://github.com/valinux/Federal-grant-search" target="_blank" rel="noopener noreferrer">Open source on GitHub ↗</a></footer>
+  <dialog id="filing-dialog" aria-labelledby="detail-title"><div class="dialog-header"><span class="section-kicker">FILING DETAILS</span><button class="icon-button" id="close-dialog" type="button" aria-label="Close filing details">✕</button></div><div id="detail-content"></div></dialog>
+  <noscript><div class="notice">Enable JavaScript to search and explore filings.</div></noscript>
+</body>
+</html>

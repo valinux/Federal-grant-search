@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.db
+*.db-*
+*.sqlite*
+.env
+.DS_Store
+node_modules/
+test-results/
+/*.zip
+.location-repair/
+/*.locations.json
